@@ -1,0 +1,6 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+hub = PrimeHub() 
+
+motor_pair=MotorPair('A','B')
+motor_pair.start(0,50)
