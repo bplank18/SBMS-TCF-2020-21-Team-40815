@@ -1,0 +1,20 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+hub = PrimeHub() 
+
+motor_pair = MotorPair('A', 'B')
+
+color_left = ColorSensor('E')
+
+color_right = ColorSensor('F')
+
+motor_pair.start(0, 40)
+
+color_left.wait_until_color('cyan')
+
+motor_pair.stop()
+
+motor_pair.move(2, 'cm', -100, -40)
+
+motor_pair.move(2.5, 'seconds', 0, -100)
