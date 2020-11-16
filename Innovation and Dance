@@ -1,0 +1,37 @@
+# Puts the innovation project in the RePLAY logo (20 pts), goes under the pull-up bar (15 pts), and dances on the dance floor (20 pts).
+# Max points: 55
+
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+hub = PrimeHub() 
+
+colorLeft = ColorSensor('E')
+
+colorRight = ColorSensor('F')
+
+motor_pair = MotorPair('A', 'B')
+
+motor_pair.start(0, 40)
+
+while True:
+    if colorLeft.get_color() == 'cyan':
+        break
+    elif colorRight.get_color() == 'cyan':
+        break
+
+motor_pair.stop()
+
+motor_pair.move(10, 'cm', 0, -60)
+
+motor_pair.move(3, 'cm', 100, 10)
+
+motor_pair.move(10, 'cm', 0, 60)
+
+motor_pair.move(30, 'cm', -35, 40)
+
+motor_pair.move(010, 'cm', -55, 40)
+
+motor_pair.move(3.75, 'rotations', 0, 100)
+
+motor_pair.start_tank(100, -100)
