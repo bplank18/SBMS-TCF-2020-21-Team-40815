@@ -1,0 +1,17 @@
+# Dances on the dance floor (20 pts)
+# Max points: 20
+
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+hub = PrimeHub() 
+
+colorLeft = ColorSensor('E')
+
+colorRight = ColorSensor('F')
+
+motor_pair = MotorPair('A', 'B')
+
+motor_pair.move(4.75, 'rotations', 0, 100)
+
+motor_pair.start_tank(100, -100)
