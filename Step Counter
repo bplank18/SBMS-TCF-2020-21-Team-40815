@@ -1,3 +1,6 @@
+# Pushes the step counter (10, 15, or 20 pts)
+# Max points: 20
+
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
 
