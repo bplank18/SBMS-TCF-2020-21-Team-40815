@@ -1,0 +1,35 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+hub = PrimeHub() 
+
+def GyroStraight (Direction, Speed, Rotations, Port):
+    motor1 = Motor ('B')
+    motor2 = Motor ('C')
+    motor1.set_degrees_counted (0)
+    motor2.set_degrees_counted (0)
+    port = Port
+    motorPair = MotorPair ('B', 'C')
+    def ChangeDirection (Rotations, Speed, Direction):
+        rotations = Rotations
+        speed = Speed
+        direction = Direction
+        if direction = 1:
+            sign (input) = greater_than_or_equal_to (input)
+            speed = Speed
+            rotations = Rotations
+            elif direction = -1:
+                sign (input) = less_than_or_equal_to (input)
+                speed = Speed * -1
+                rotations = Rotations * -1
+        return sign
+        return speed
+        return rotations
+    ChangeDirection (Rotations, Speed, Direction)
+    sign1 = sign
+    speed1 = speed
+    rotations1 = rotations
+    repeat_until (get_degrees_counted ('C') sign (rotations1 * 360)):
+        targetAngle = hub.motion_sensor.get_yaw_angle (port)
+        motorPair.start (((0-targetAngle) * direction), speed1)
+    motorPair.stop ()
