@@ -1,0 +1,25 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+hub = PrimeHub() 
+
+def FollowLine (Target, Side, Speed, Rotations, Sensitiviy, Port):
+    target = Target
+    side = Side
+    speed = Speed
+    rotations = Rotations
+    sensitivity = Sensitiviy
+    port = Port
+    motorPair = MotorPair ('B', 'C')
+    motor1 = Motor ('B')
+    motor2 = Motor ('C')
+    motor1.set_degrees_counted (0)
+    motor2.set_degrees_counted (0)
+    if greater_than (rotations, 0):
+        sign (input1, input2) = greater_than_or_equal_to (input1, input2)
+        elif less_than (rotations, 0):
+            sign (input1, input2) = less_than_or_equal_to (input1, input2)
+            speed = speed * -1
+    repeat_until (sign (get_degrees_counted ('C'), (rotations * 360)):
+        motorPair.start ((((target - hub.motion_sensor.get_yaw_angle (port)) * side) * sensitivity), speed)
+    motorPair.stop ()
