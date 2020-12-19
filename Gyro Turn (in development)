@@ -1,0 +1,23 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+hub = PrimeHub() 
+
+def GyroTurn (Angle, Speed, Port):
+    port = Port
+    speed = Speed
+    angle = Angle
+    motor1 = Motor ('B')
+    motor2 = Motor ('C')
+    motor1.set_degrees_counted (0)
+    motor2.set_degrees_counted (0)
+    motorPair = MotorPair ('B', 'C')
+    if greater_than (angle, 0):
+        direction = 1
+        sign (input1, input2) = greater_than_or_equal_to (input1, input2)
+        elif less_than (angle, 0):
+            direction = -1
+            sign (input1, input2) = less_than_or_equal_to (input1, input2)
+    repeat_until (sign (hub.motion_sensor.get_yaw_angle (port)), angle):
+        motorPair.start ((direction + 100), speed)
+    motorPair.stop ()
