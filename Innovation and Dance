@@ -34,4 +34,6 @@ motor_pair.move(010, 'cm', -55, 40)
 
 motor_pair.move(3.75, 'rotations', 0, 100)
 
-motor_pair.start_tank(100, -100)
+while True:
+    motor_pair.move(.3, 'rotations', 0, 50)
+    motor_pair.move(.3, 'rotations', 0, -50)
