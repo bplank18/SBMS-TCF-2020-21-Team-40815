@@ -13,11 +13,11 @@ motor_pair = MotorPair('A', 'B')
 
 forklift_motor = Motor('C')
 
-motor_pair.move(2.2, 'rotations', 0, 30)
+motor_pair.move(2.4, 'rotations', 0, 30)
 
 motor_pair.move_tank(.23, 'rotations', -20, 20)
 
-motor_pair.move(3, 'rotations', 0, 40)
+motor_pair.move(2.9, 'rotations', 0, 40)
 
 forklift_motor.run_for_rotations(-1.71, 50)
 
@@ -25,9 +25,9 @@ forklift_motor.run_for_rotations(1.71, 50)
 
 motor_pair.move_tank(.39, 'rotations', 20, -20)
 
-motor_pair.move(3.25, 'rotations', 0, 40)
+motor_pair.move(3.1, 'rotations', 0, 40)
 
-motor_pair.move(.33, 'rotations', 10, -10)
+motor_pair.move(.35, 'rotations', 10, -10)
 
 forklift_motor.run_for_rotations(-1.4, 50)
 
