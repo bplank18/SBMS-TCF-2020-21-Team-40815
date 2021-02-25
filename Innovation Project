@@ -1,8 +1,7 @@
-# Puts the innovation project in the RePLAY logo (20 pts)
-# Max points 20
-
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
+
+import sys
 
 hub = PrimeHub() 
 
@@ -12,16 +11,12 @@ colorRight = ColorSensor('F')
 
 motor_pair = MotorPair('A', 'B')
 
-motor_pair.start(0, 40)
+motor_pair.move(1.75, 'rotations', 0, 40)
 
-while True:
-    if colorLeft.get_color() == 'cyan':
-        break
-    elif colorRight.get_color() == 'cyan':
-        break
+motor_pair.move(3, 'cm', -100, 15)
 
-motor_pair.stop()
+motor_pair.move(3, 'cm', 100, 20)
 
-motor_pair.move(5, 'cm', -50, -40)
+motor_pair.move(2, 'rotations', 0, -100)
 
-motor_pair.move(6, 'rotations', 0, -100)
+sys.stop
