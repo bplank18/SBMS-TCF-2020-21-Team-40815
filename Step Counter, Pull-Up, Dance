@@ -1,0 +1,55 @@
+# M02 Step Counter (20pts) M06 Pull-Up-Bar (15pts) M07 Robot Dance (20pts)
+# Max Points: 55
+
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+
+import sys
+
+hub = PrimeHub()
+
+colorLeft = ColorSensor('E')
+
+colorRight = ColorSensor('F')
+
+motor_pair = MotorPair('A', 'B')
+
+motor1 = Motor('B')
+motor2 = Motor('A')
+
+color = ColorSensor('E')
+
+motor_pair.start(0, 40) # Robot moves to step counter
+
+colorLeft.wait_until_color('green')
+
+wait_for_seconds(1.75)
+
+colorLeft.wait_until_color('white')
+
+motor_pair.move(10, "cm", 0, 15)
+
+motor_pair.move(20, "cm", 0, 4) # Robot pushes in step counter
+
+while color.get_color() != 'white': # Robot moves under pull-up-bar
+    motor_pair.start(0, -5)
+motor_pair.stop()
+
+motor_pair.move(6, "cm", 0, -10)
+
+motor1.run_for_degrees(-260)
+
+motor_pair.move(43, "cm", 0, -30)
+
+motor_pair.start(0,-20) # Robot moves to dance floor
+while color.get_color() != 'black':
+    motor_pair.start(0, -10)
+motor_pair.stop()
+
+motor2.run_for_degrees(-450)
+
+motor_pair.move(40, "cm", 0, 30)
+
+while True: # DANCE
+    motor_pair.move(.3, 'rotations', 0, 50)
+    motor_pair.move(.3, 'rotations', 0, -50)
