@@ -1,3 +1,6 @@
+# M01 Innovation Project (20pts) M14 Health Units (15pts)
+# Max Points: 35
+
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
 
@@ -11,12 +14,11 @@ colorRight = ColorSensor('F')
 
 motor_pair = MotorPair('A', 'B')
 
-motor_pair.move(1.75, 'rotations', 0, 40)
-
-motor_pair.move(3, 'cm', -100, 15)
+motor_pair.move(1.75, 'rotations', 0, 40) #Robot pushes innov project and three health units into gray area of bench
+motor_pair.move(3, 'cm', -100, 15) #pushes over bench
 
 motor_pair.move(3, 'cm', 100, 20)
 
-motor_pair.move(2, 'rotations', 0, -100)
+motor_pair.move(2, 'rotations', 0, -100) #moves back to home
 
 sys.stop
