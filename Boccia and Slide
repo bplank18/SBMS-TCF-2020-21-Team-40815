@@ -1,3 +1,6 @@
+# M08 Boccia (40pts) M03 Slide (5pts)
+# Max Points: 45
+
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
 
@@ -13,29 +16,29 @@ motor_pair = MotorPair('A', 'B')
 
 forklift_motor = Motor('C')
 
-motor_pair.move(2.4, 'rotations', 0, 30)
+motor_pair.move(2.4, 'rotations', 0, 30) # Robot moves to boccia share
 
 motor_pair.move_tank(.23, 'rotations', -20, 20)
 
 motor_pair.move(2.9, 'rotations', 0, 40)
 
-forklift_motor.run_for_rotations(-1.71, 50)
+forklift_motor.run_for_rotations(-1.71, 50) # Robot drops blue boccia cube off boccia share
 
 forklift_motor.run_for_rotations(1.71, 50)
 
-motor_pair.move_tank(.39, 'rotations', 20, -20)
+motor_pair.move_tank(.39, 'rotations', 20, -20) # Robot moves to and aligns boccia aim with target in boccia frame.
 
 motor_pair.move(3.1, 'rotations', 0, 40)
 
 motor_pair.move(.35, 'rotations', 10, -10)
 
-forklift_motor.run_for_rotations(-1.4, 50)
+forklift_motor.run_for_rotations(-1.4, 50) # Robot drops yellow cube in boccia aim
 
-motor_pair.move(.11, 'rotations', 100, -100)
+motor_pair.move(.11, 'rotations', 100, -100) # Robot hits man off slide and goes back to home
 
 motor_pair.move(2, 'rotations', 0, -50)
 
-motor_pair.move(.7, 'rotations', 100, 50)
+motor_pair.move(.7, 'rotations', 100, 50) 
 
 motor_pair.move(6, 'rotations', 0, 100)
 
